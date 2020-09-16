@@ -1,10 +1,8 @@
 //////////// ------------ AQUI É FEITO O HTML TODO EM DOM ------------ ///
 //
 
-
 const numeroDePeças = 5; //pode ser um input !
-const numeroDeTorres = 3
-
+const numeroDeTorres = 3;
 
 //Função criarDiv cria a div maior, o retângulo que engloba o jogo.
 function criarDiv() {
@@ -13,7 +11,6 @@ function criarDiv() {
   document.body.appendChild(divGlobal);
   criarTorre();
   criarPecas();
-  
 }
 criarDiv();
 
@@ -30,11 +27,11 @@ function criarTorre() {
 
 //funcão CriarPecas  cria peças  em loop baseada na letiável numeroDePeças que pode ser um  input do usuário
 function criarPecas() {
-  for (let index = 1; index < numeroDePeças; index++) {
+  for (let index = 1; index < 5; index++) {
     let novaPeca = document.createElement("div");
     novaPeca.id = "disco" + index;
     novaPeca.className = "discos";
-  
+
     document.getElementById("id-torre1").appendChild(novaPeca);
   }
 }
@@ -70,46 +67,39 @@ function init() {
   }
 }
 
-
-
-
-
-
 function dragstart(ev) {
-  ev.dataTransfer.setData('text', ev.target.id);
+  ev.dataTransfer.setData("text", ev.target.id);
   draggedone = ev.target.id;
 }
 
-function dragenter (ev) {
-  let torre = ev.currentTarget; 
+function dragenter(ev) {
+  let torre = ev.currentTarget;
   let disco = draggedone;
-  let discosNaTorre = torre.getElementsByClassName("discos"); 
-  if (discosNaTorre.length==0 || discosNaTorre[0].id>discos){
-    torre.discoPodeSerDroppadoAqui = true; 
-    ev.preventDefault(); 
+  let discosNaTorre = torre.getElementsByClassName("discos");
+  if (discosNaTorre.length == 0 || discosNaTorre[0].id > discos) {
+    torre.discoPodeSerDroppadoAqui = true;
+    ev.preventDefault();
     return;
   }
-  torre.discoPodeSerDroppadoAqui = false; 
+  torre.discoPodeSerDroppadoAqui = false;
 }
 
-function dragover(ev){
-  if (ev.currentTarget.discoPodeSerDroppadoAqui)
-      ev.preventDefault();
+function dragover(ev) {
+  if (ev.currentTarget.discoPodeSerDroppadoAqui) ev.preventDefault();
 }
-
 
 function drop(ev) {
   let torre = ev.currentTarget;
-  let disco = document.getElementById(ev.dataTransfer.getData('text'));
-  ev.dataTransfer.dropEffect = 'move';
-  torre.insertBefore(disco,torre.firstChild);
-  for (let i=0; i<torres.length;i++){ 
-    let e = torres[i].getElementsByClassName("discos"); 
-    if (e.length) e[0].draggable = true; 
-    for (let j=1;j<e.length;j++){
-      e[j].draggable = false; 
+  let disco = document.getElementById(ev.dataTransfer.getData("text"));
+  ev.dataTransfer.dropEffect = "move";
+  torre.insertBefore(disco, torre.firstChild);
+  for (let i = 0; i < torres.length; i++) {
+    let e = torres[i].getElementsByClassName("discos");
+    if (e.length) e[0].draggable = true;
+    for (let j = 1; j < e.length; j++) {
+      e[j].draggable = false;
     }
   }
-  ev.preventDefault(); 
+  ev.preventDefault();
 }
 init();

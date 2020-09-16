@@ -41,8 +41,9 @@ body #id-divGlobal {
 
     #id-divGlobal .torre {
         display: flex; 
-        flex-direction: column-reverse; 
+        flex-direction: column; 
         align-items: center;
+        justify-content: flex-end;
         
 
         background-color: #977ef2;
@@ -55,19 +56,19 @@ body #id-divGlobal {
             height: 10%;
             width: 85%;
         }
-        .torre #disco1 {
+        .torre #disco4 {
           width: 150px;
           background-color: var(--cor4);
         }
-        .torre #disco2 {
+        .torre #disco3 {
           width: 130px;
           background-color: #f30101;
         }
-        .torre #disco3 {
+        .torre #disco2 {
           width: 100px;
           background-color: cyan;
         }
-        .torre #disco4 {
+        .torre #disco1 {
           width: 80px;
           background-color: blue;
   
