@@ -43,16 +43,32 @@ body #id-divGlobal {
         display: flex; 
         flex-direction: column-reverse; 
         align-items: center;
+        
 
-
-        background-color: var(--cor4);
-        margin: 1%;
+        background-color: #977ef2;
+        margin: 5%;
         height: 50%;
-        width: 15%;
+        width: 20%;
     }
-        .torre  .peca {
-            background-color: var(--cor1);
+        .torre  .discos {
             margin: 3%;
             height: 10%;
             width: 85%;
+        }
+        .torre #disco1 {
+          width: 150px;
+          background-color: var(--cor4);
+        }
+        .torre #disco2 {
+          width: 130px;
+          background-color: #f30101;
+        }
+        .torre #disco3 {
+          width: 100px;
+          background-color: cyan;
+        }
+        .torre #disco4 {
+          width: 80px;
+          background-color: blue;
+  
         }
