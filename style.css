@@ -1,0 +1,192 @@
+/* reset */
+
+html,
+body,
+div,
+header,
+h1 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+/* reset */
+
+
+/* Variável PALETA DE CORES */
+
+:root {
+    --cor1: #977ef2;
+    --cor2: #0597f2;
+    --cor3: #2955D9;
+    --cor4: #F25C05;
+    --cor5: #F24C3D;
+}
+
+
+/* Fonts */
+
+h1 {
+    font-size: 35px;
+    font-family: monospace;
+    font-weight: bolder;
+}
+
+
+/* Estilização */
+
+body {
+    background-color: var(--cor2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body #id-divGlobal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor3);
+}
+
+#id-divGlobal .torre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0.3em;
+}
+
+.torre .discos {
+    margin: 3%;
+    height: 4vh;
+    width: 85%;
+}
+
+
+/* Definindo Cores dos Elementos */
+
+#id-divGlobal .torre {
+    background-color: #977ef2;
+}
+
+.torre #disco4 {
+    background-color: var(--cor4);
+}
+
+.torre #disco3 {
+    background-color: #f30101;
+}
+
+.torre #disco2 {
+    background-color: cyan;
+}
+
+.torre #disco1 {
+    background-color: blue;
+}
+
+
+/* Definindo Dimensão dos Elementos */
+
+h1 {
+    margin-top: 4vh;
+    margin-bottom: 12vh;
+}
+
+div#id-divGlobal {
+    height: 40vh;
+    width: 90vw;
+    padding-top: 8vh;
+    padding-bottom: 0;
+}
+
+div#id-torre1.torre,
+div#id-torre2.torre,
+div#id-torre3.torre,
+div#id-torre4.torre {
+    height: 28vh;
+    width: 30vw;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+div#disco1.discos,
+div#disco2.discos,
+div#disco3.discos,
+div#disco4.discos {
+    height: 3vh;
+}
+
+div#disco1.discos {
+    width: 6vw;
+}
+
+div#disco2.discos {
+    width: 12vw;
+}
+
+div#disco3.discos {
+    width: 20vw;
+}
+
+div#disco4.discos {
+    width: 26vw;
+}
+
+@media only screen and (min-width: 750px) {
+    /* Fonts */
+    h1 {
+        font-size: 5em;
+    }
+    /* Alteração de cor background */
+    body {
+        background-color: rgb(153, 49, 49);
+    }
+    /* Dimensões */
+    div#id-torre1.torre,
+    div#id-torre2.torre,
+    div#id-torre3.torre,
+    div#id-torre4.torre {
+        height: 30vh;
+        width: 28vw;
+        margin-bottom: 2vh;
+    }
+    div#disco1.discos,
+    div#disco2.discos,
+    div#disco3.discos,
+    div#disco4.discos {
+        height: 5vh;
+        margin: 1%;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    /* Voltando a cor padrão do Mobile */
+    body {
+        background-color: #0597F2;
+    }
+    /* Dimensões */
+    div#id-divGlobal {
+        width: 80vw;
+        padding-left: 3vw;
+        padding-right: 2vw;
+    }
+    div#disco1.discos {
+        width: 4vw;
+    }
+    div#disco2.discos {
+        width: 10vw;
+    }
+    div#disco3.discos {
+        width: 18vw;
+    }
+    div#disco4.discos {
+        width: 23vw;
+    }
+}
